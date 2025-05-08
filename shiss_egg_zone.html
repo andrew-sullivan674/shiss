@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shiss Egg Zone</title>
+  <style>
+    body {
+      background-color: #fdf6e3;
+      font-family: Comic Sans MS, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      animation: bgflash 1s infinite alternate;
+    }
+
+    h1 {
+      color: #d33682;
+      animation: shake 0.5s infinite;
+    }
+
+    p {
+      color: #657b83;
+      font-size: 20px;
+      animation: shake 0.5s infinite 0.2s;
+    }
+
+    .egg-container {
+      margin-top: 40px;
+    }
+
+    .egg {
+      width: 100px;
+      height: 130px;
+      background: radial-gradient(ellipse at center, #fffacd 0%, #f0e68c 100%);
+      border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+      margin: 0 auto;
+      animation: spin 4s linear infinite, wobble 0.5s infinite alternate;
+      box-shadow: 0 0 20px rgba(255, 220, 100, 0.6);
+      cursor: pointer;
+    }
+
+    #shout {
+      font-size: 32px;
+      margin-top: 30px;
+      color: #b58900;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes wobble {
+      0% { transform: rotate(0deg) translateX(0); }
+      100% { transform: rotate(15deg) translateX(20px); }
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @keyframes bgflash {
+      0% { background-color: #fdf6e3; }
+      50% { background-color: #ff6666; }
+      100% { background-color: #fdf6e3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Shiss Egg Zone</h1>
+  <p>Brace yourself. It’s about to get weird.</p>
+
+  <div class="egg-container">
+    <div class="egg" onclick="scream()"></div>
+  </div>
+
+  <div id="shout">MIIIIIII <br>👅👃</div>
+
+  <script>
+    function scream() {
+      const shout = document.getElementById("shout");
+      shout.style.display = "block";
+    }
+  </script>
+</body>
+</html>
